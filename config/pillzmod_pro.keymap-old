@@ -47,7 +47,7 @@
         };
         
         // homerow mods
-        hr  m: homerow_mods {
+        hrm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
@@ -78,7 +78,7 @@
             //                                            | HOME |  | PGUP |
             //                              | BSPC | DEL  | END  |  | PGDN | ENT  | SPC  |
             bindings = <
-    &kp HOME   &kp F1   &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8                                 &kp F9   &kp F10 &kp F11 &kp F12 &kp PSCRN   &kp SLCK    &kp PAUSE_BREAK &tog LAYER_KEYPAD   &mo SYSTEM
+    &kp HOME   &kp F1   &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8                                 &kp F9   &kp F10 &kp F11 &kp F12 &kp PSCRN   &kp SLCK    &kp PAUSE_BREAK &mo MEDIA   &mo SYSTEM
     &kp EQUAL  &kp N1       &kp N2      &kp N3        &kp N4            &kp N5                                 &kp N6    &kp N7         &kp N8          &kp N9      &kp N0          &kp MINUS
     &kp TAB    &kp Q        &kp W       &kp E         &kp R             &kp T                                  &kp Y     &kp U          &kp I           &kp O       &kp P           &kp BSLH
     &kp CAPS   &hrm LGUI A  &hrm LALT S &hrm LCTRL D  &hrm LEFT_SHIFT F &kp G                                  &kp H     &hrm LSHFT J   &hrm LCTRL K    &hrm LALT L &hrm LGUI SEMI  &kp SQT
@@ -92,8 +92,6 @@
         };
         
         lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // Lower layer
             bindings = <
     &trans  &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans  &trans      &trans  &trans
@@ -109,8 +107,6 @@
         };
 
         raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // Raise layer
             bindings = <
     &trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans

@@ -21,6 +21,7 @@
 /********************/
 /*     includes     */
 /********************/
+#include "secrets.h"
 
 /********************/
 /*      Layers      */
@@ -28,57 +29,38 @@
 #define DEFAULT 0
 #define LOWER   1
 #define RAISE   2
-#define MEDIA   3
+#define FN      3
 #define SYSTEM  4
 
 /********************/
 /* custom behaviors */
 /********************/
-/ {
-    behaviors {
-        mo_key: behavior_mo_key {
-            compatible = "zmk,behavior-hold-tap";
-            label = "mo_key";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <175>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-        };
-        
-        // homerow mods
-        hrm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <280>;
-            quick_tap_ms = <125>;
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
 
-        };
-    };
+// homerow mods
+ZMK_BEHAVIOR(hrm, hold_tap,
+    flavor = "balanced";
+    tapping-term-ms = <280>;
+    quick-tap-ms = <125>;
+    global-quick-tap;
+    bindings = <&kp>, <&kp>;
+)
 
 /********************/
 /*  custom Keymaps  */
 /********************/
 
-    keymap {
-        compatible = "zmk,keymap";
+    // |  HOME | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 |      | F9 | F10 | F11 | F12 | PSCRN| SLCK | PAUSE| Layer| SYS  |
+    // |   =   |  1   |  2   |  3   |  4   |  5   |                |  6   |  7   |  8   |  9   |  0   |  -   |
+    // |  TAB  |  Q   |  W   |  E   |  R   |  T   |                |  Y   |  U   |  I   |  O   |  P   |  \   |
+    // | CAPS  |  A   |  S   |  D   |  F   |  G   |                |  H   |  J   |  K   |  L   |  ;   |  '   |
+    // | SHIFT |  Z   |  X   |  C   |  V   |  B   |                |  N   |  M   |  ,   |  .   |  /   | SHIFT|
+    //         |  `   | INS  | LEFT |RIGHT |      |                |      |  UP  | DOWN |  [   |  ]   |
+    //                                     | CTRL | ALT  |  | GUI  | CTRL |
+    //                                            | HOME |  | PGUP |
+    //                              | BSPC | DEL  | END  |  | PGDN | ENT  | SPC  |
 
-        default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  HOME | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 |      | F9 | F10 | F11 | F12 | PSCRN| SLCK | PAUSE| Layer| SYS  |
-            // |   =   |  1   |  2   |  3   |  4   |  5   |                |  6   |  7   |  8   |  9   |  0   |  -   |
-            // |  TAB  |  Q   |  W   |  E   |  R   |  T   |                |  Y   |  U   |  I   |  O   |  P   |  \   |
-            // | CAPS  |  A   |  S   |  D   |  F   |  G   |                |  H   |  J   |  K   |  L   |  ;   |  '   |
-            // | SHIFT |  Z   |  X   |  C   |  V   |  B   |                |  N   |  M   |  ,   |  .   |  /   | SHIFT|
-            //         |  `   | INS  | LEFT |RIGHT |      |                |      |  UP  | DOWN |  [   |  ]   |
-            //                                     | CTRL | ALT  |  | GUI  | CTRL |
-            //                                            | HOME |  | PGUP |
-            //                              | BSPC | DEL  | END  |  | PGDN | ENT  | SPC  |
-            bindings = <
-    &kp HOME   &kp F1   &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8                                 &kp F9   &kp F10 &kp F11 &kp F12 &kp PSCRN   &kp SLCK    &kp PAUSE_BREAK &mo MEDIA   &mo SYSTEM
+ZMK_LAYER(default_layer,
+    &kp HOME   &kp F1   &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8                                 &kp F9   &kp F10 &kp F11 &kp F12 &kp PSCRN   &kp SLCK    &kp PAUSE_BREAK &mo FN   &mo SYSTEM
     &kp EQUAL  &kp N1       &kp N2      &kp N3        &kp N4            &kp N5                                 &kp N6    &kp N7         &kp N8          &kp N9      &kp N0          &kp MINUS
     &kp TAB    &kp Q        &kp W       &kp E         &kp R             &kp T                                  &kp Y     &kp U          &kp I           &kp O       &kp P           &kp BSLH
     &kp CAPS   &hrm LGUI A  &hrm LALT S &hrm LCTRL D  &hrm LEFT_SHIFT F &kp G                                  &kp H     &hrm LSHFT J   &hrm LCTRL K    &hrm LALT L &hrm LGUI SEMI  &kp SQT
@@ -88,12 +70,10 @@
                                                                         &kp HOME         &kp PG_UP
                                             &kp BSPC    &lt LOWER ESC   &kp END          &kp PG_DN  &lt RAISE ENTER   &kp SPACE
     &kp ESCAPE  &kp ESCAPE  &kp ESCAPE
-            >;
-        };
-        
-        lower_layer {
-            bindings = <
-    &trans  &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+)
+
+ZMK_LAYER(lower_layer,
+    &trans  &trans      &trans      &trans      &trans      &trans  &trans  &trans  &trans      &trans      &trans      &trans  &trans      &trans  &trans  &trans  &trans  &trans
     &trans  &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans  &trans      &trans  &trans
     &trans  &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans  &trans      &trans  &trans
     &trans  &kp LC(A)   &kp LC(TAB) &kp LGUI    &kp TAB     &trans                              &kp LEFT    &kp DOWN    &kp UP  &kp RIGHT   &trans  &trans
@@ -103,12 +83,9 @@
                                                                     &trans              &trans
                                                     &trans  &trans  &trans              &trans  &trans  &trans 
     &trans  &trans  &trans
-            >;
-        };
-
-        raise_layer {
-            bindings = <
-    &trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+)
+ZMK_LAYER(raise_layer,
+    &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
@@ -118,14 +95,9 @@
                                                           &trans        &trans
                                           &trans  &trans  &trans        &trans  &trans  &trans 
     &trans  &trans  &trans
-            >;
-        };
-
-        media_layer {
-            // -----------------------------------------------------------------------------------------
-            // media layer
-            bindings = <
-    &trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+)
+ZMK_LAYER(fn_layer,
+    &trans  &kp F1   &kp F2  &kp F3  &kp F4  &kp F5  &kp F6  &kp F7  &kp F8      &kp F9   &kp F10 &kp F11 &kp F12  &kp F13  &kp F14  &kp F15  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                              &trans  &trans  &trans  &trans  &trans  &trans
@@ -135,28 +107,19 @@
                                                           &trans        &trans
                                           &trans  &trans  &trans        &trans  &trans  &trans 
     &trans  &trans  &trans
-            >;
-        };
-
-        system_layer {
-            // -----------------------------------------------------------------------------------------
-            // System layer: Bluetooth, backlight, bootloader
-            bindings = <
-    &studio_unlock  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans  &trans  &trans  &trans       &bt BT_CLR  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &trans  &trans  &trans                                                                   &trans  &trans  &trans  &trans  &trans  &bootloader
+)
+ZMK_LAYER(system_layer,
+    &studio_unlock  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &trans  &trans  &trans  &bt BT_CLR       &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                                                                   &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                                                                   &trans  &trans  &trans  &trans  &trans  &trans
     &trans  &trans  &trans  &trans  &trans  &trans                                                                   &trans  &trans  &trans  &trans  &trans  &trans
+    &bootloader  &trans  &trans  &trans  &trans  &trans                                                                   &trans  &trans  &trans  &trans  &trans  &trans
             &trans  &trans  &trans  &trans                                                                                   &trans  &trans  &trans  &trans
                                                   &trans  &trans                                        &trans  &trans
                                                           &trans                                        &trans
                                       &bl BL_TOG  &trans  &trans                                        &trans  &trans  &trans
     &trans  &trans  &trans
-            >;
-        };
-
-    };
-};
+)
 
 /****************************/
 /*  Tri State Layer Switch  */
