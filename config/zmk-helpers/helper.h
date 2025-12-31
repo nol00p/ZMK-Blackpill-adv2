@@ -155,7 +155,7 @@
     };
 
 /* ZMK_UNICODE */
-/*
+
 #if !defined OS_UNICODE_LEAD
     #if HOST_OS == 2
         #define OS_UNICODE_LEAD &macro_press &kp LALT      // macOS/Windows-Alt-Codes
@@ -174,8 +174,6 @@
         #define OS_UNICODE_TRAIL &macro_tap &kp RET       // Windows + WinCompose (default)
     #endif
 #endif
-*/
-
 
 #define UC_MACRO(name, unicode_bindings) \
     / { \
