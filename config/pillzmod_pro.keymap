@@ -17,13 +17,12 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-
-
-/********************/
-/*     includes     */
-/********************/
 #include "zmk-helpers/helper.h"
+// #include "secrets.h"
 
+/**********************/
+/* Leader definitions */
+/**********************/
 // Define leader behavior first
 / {
     behaviors {
@@ -79,7 +78,7 @@ ZMK_LAYER(default_layer,
     &kp EQUAL   &kp N1       &kp N2      &kp N3        &kp N4            &kp N5                     &kp N6    &kp N7         &kp N8          &kp N9      &kp N0          &kp MINUS
     &kp TAB     &kp Q        &kp W       &kp E         &kp R             &kp T                      &kp Y     &kp U          &kp I           &kp O       &kp P           &kp BSLH
     &caps_word  &hrm LGUI A  &hrm LALT S &hrm LCTRL D  &hrm LEFT_SHIFT F &kp G                      &kp H     &hrm LSHFT J   &hrm LCTRL K    &hrm LALT L &hrm LGUI SEMI  &kp SQT
-    &leader       &kp Z        &kp X       &kp C         &kp V             &kp B                      &kp N     &kp M          &kp COMMA       &kp DOT     &kp SLASH       &kp RSHFT
+    &leader     &kp Z        &kp X       &kp C         &kp V             &kp B                      &kp N     &kp M          &kp COMMA       &kp DOT     &kp SLASH       &kp RSHFT
                 &none        &kp INSERT  &none         &none                                                  &none          &none           &kp LBKT    &kp RBKT
                                                             &kp LCTRL       &kp LALT         &kp RGUI   &kp RCTRL
                                                                             &kp HOME         &kp PG_UP
