@@ -88,7 +88,7 @@ ZMK_LAYER(default_layer,
 
 ZMK_LAYER(lower_layer,
     &trans  &trans      &trans      &trans      &trans      &trans  &trans  &trans  &trans      &trans      &trans      &trans  &trans      &trans  &trans  &trans  &trans  &trans
-    &trans  &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans  &trans      &trans  &trans
+    &trans  &trans      &trans      &trans      &trans      &kp DEL                              &trans      &trans      &trans  &trans      &trans  &trans
     &trans  &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans  &trans      &trans  &trans
     &trans  &kp LC(A)   &kp LS(TAB) &kp LGUI    &kp TAB     &trans                              &kp LEFT    &kp DOWN    &kp UP  &kp RIGHT   &trans  &trans
     &trans  &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &kp LC(B)                           &trans      &trans      &trans  &trans      &trans  &trans
