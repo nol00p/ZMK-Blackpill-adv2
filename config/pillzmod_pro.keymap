@@ -101,8 +101,8 @@ ZMK_LAYER(lower_layer,
 ZMK_LAYER(raise_layer,
     &trans  &kp LG(LS(1))  &kp LG(LS(2))  &kp LG(LS(3))   &kp LG(LS(4))   &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
     &kp LC(EQUAL)   &trans  &trans  &trans   &trans   &trans                              &trans  &trans  &trans  &trans  &trans  &kp LC(MINUS) 
-    &trans  &trans  &trans  &kp LPAR &kp RPAR &trans                              &trans  &trans  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &kp LBKT &kp RBKT &trans                              &&kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &trans  &trans
+    &trans  &trans  &trans  &kp LPAR &kp RPAR &trans                              &trans  &kp LS(H)  &trans  &trans  &trans  &trans
+    &trans  &trans  &trans  &kp LBKT &kp RBKT &trans                              &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &trans  &trans
     &trans  &trans  &trans  &kp LBRC &kp RBRC &trans                              &trans  &trans  &trans  &trans  &trans  &trans
             &trans  &trans  &trans   &trans                                              &trans  &trans  &trans  &trans
                                                   &trans  &trans        &trans  &trans
