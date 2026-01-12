@@ -74,7 +74,7 @@ ZMK_LEADER_SEQUENCE(ldr_q, &kp N2, Q)
     //                              | BSPC | DEL  | END  |  | PGDN | ENT  | SPC  |
 
 ZMK_LAYER(default_layer,
-    &kp ESC     &kp LG(LA(1))   &kp LG(LA(2))  &kp LG(LA(3))  &kp LG(LA(4))  &kp F5  &kp F6  &kp F7  &kp F8                    &kp C_PREV   &kp C_PLAY_PAUSE &kp C_NEXT &kp F12 &kp C_MUTE   &kp C_VOL_DN    &kp C_VOL_UP &mo FN   &mo SYSTEM
+    &kp ESC     &kp LA(LG(N1))   &kp LG(LA(N2))  &kp LG(LA(N3))  &kp LG(LA(N4))  &kp F5  &kp F6  &kp F7  &kp LG(SPACE)                    &kp C_PREV   &kp C_PLAY_PAUSE &kp C_NEXT &kp F12 &kp C_MUTE   &kp C_VOL_DN    &kp C_VOL_UP &mo FN   &mo SYSTEM
     &kp EQUAL   &kp N1       &kp N2      &kp N3        &kp N4            &kp N5                     &kp N6    &kp N7         &kp N8          &kp N9      &kp N0          &kp MINUS
     &kp TAB     &kp Q        &kp W       &kp E         &kp R             &kp T                      &kp Y     &kp U          &kp I           &kp O       &kp P           &kp BSLH
     &caps_word  &hrm LGUI A  &hrm LALT S &hrm LCTRL D  &hrm LEFT_SHIFT F &kp G                      &kp H     &hrm LSHFT J   &hrm LCTRL K    &hrm LALT L &hrm LGUI SEMI  &kp SQT
@@ -87,9 +87,9 @@ ZMK_LAYER(default_layer,
 )
 
 ZMK_LAYER(lower_layer,
-    &trans  &trans      &trans      &trans      &trans      &trans  &trans  &trans  &trans      &trans      &trans      &trans  &trans      &trans  &trans  &trans  &trans  &trans
-    &trans  &trans      &trans      &trans      &trans      &kp DEL                              &trans      &trans      &trans  &trans      &trans  &trans
+    &trans  &trans      &trans      &trans      &trans      &trans  &trans  &trans  &trans      &kp LS(LC(LG(N1)))      &kp LS(LC(LG(N2)))      &kp LS(LC(LG(N3)))  &kp LS(LC(LG(N4)))      &trans  &trans  &trans  &trans  &trans
     &trans  &trans      &trans      &trans      &trans      &trans                              &trans      &trans      &trans  &trans      &trans  &trans
+    &trans  &trans      &trans      &trans      &trans      &kp DEL                             &trans      &trans      &trans  &trans      &trans  &trans
     &trans  &kp LC(A)   &kp LS(TAB) &kp LGUI    &kp TAB     &trans                              &kp LEFT    &kp DOWN    &kp UP  &kp RIGHT   &trans  &trans
     &trans  &kp LC(Z)   &kp LC(X)   &kp LC(C)   &kp LC(V)   &kp LC(B)                           &trans      &trans      &trans  &trans      &trans  &trans
             &trans      &trans      &trans      &trans                                                      &trans      &trans  &trans      &trans
@@ -99,10 +99,10 @@ ZMK_LAYER(lower_layer,
     &trans  &trans  &trans
 )
 ZMK_LAYER(raise_layer,
-    &trans  &kp LG(LS(1))  &kp LG(LS(2))  &kp LG(LS(3))   &kp LG(LS(4))   &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+    &trans  &kp LG(LS(N1))  &kp LG(LS(N2))  &kp LG(LS(N3))   &kp LG(LS(N4))   &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
     &kp LC(EQUAL)   &trans  &trans  &trans   &trans   &trans                              &trans  &trans  &trans  &trans  &trans  &kp LC(MINUS) 
-    &trans  &trans  &trans  &kp LPAR &kp RPAR &trans                              &trans  &kp LS(H)  &trans  &trans  &trans  &trans
-    &trans  &trans  &trans  &kp LBKT &kp RBKT &trans                              &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &trans  &trans
+    &trans  &trans  &trans  &kp LPAR &kp RPAR &trans                              &trans  &kp LG(H)  &trans  &trans  &trans  &trans
+    &trans  &trans  &trans  &kp LBKT &kp RBKT &trans                              &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &trans  &trans
     &trans  &trans  &trans  &kp LBRC &kp RBRC &trans                              &trans  &trans  &trans  &trans  &trans  &trans
             &trans  &trans  &trans   &trans                                              &trans  &trans  &trans  &trans
                                                   &trans  &trans        &trans  &trans
