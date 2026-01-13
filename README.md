@@ -19,7 +19,7 @@ The only remaining stock components are the Cherry MX Brown switches. While ther
 - [x] Helper.h
 - [x] Tri State Layer
 - [x] Macro
-	- [ ] with unicode support. 
+	- [x] with unicode support. 
 ###### Supported but not yet tested
 - [ ] Combo
 
