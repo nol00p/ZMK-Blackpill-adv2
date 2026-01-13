@@ -95,6 +95,10 @@ SYSTEM  4
 
 ## Credits
 https://github.com/dcpedit/pillzmod
+
 https://github.com/masters3d/zmk-config-pillzmod-nicenano
+
 https://github.com/urob/zmk-leader-key
+
 https://github.com/urob/zmk-helpers
+
