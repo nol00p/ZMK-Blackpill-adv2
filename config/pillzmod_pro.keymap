@@ -9,29 +9,20 @@
  * This file serves as the KLCM configuration template. The actual ZMK shield 
  * keymap is located in boards/shields/pillzmod-nicenano/pillzmod-nicenano.keymap
  * 
- * Repository: https://github.com/masters3d/zmk-config-pillzmod-nicenano
+ * Repository: https://github.com/nol00p/ZMK-Blackpill-adv2
  */
 
+// DEFAULT
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include "zmk-helpers/helper.h"
-// #include "secrets.h"
 
-/**********************/
-/* Leader definitions */
-/**********************/
-// Define leader behavior first
-/ {
-    behaviors {
-        leader: leader {
-            compatible = "zmk,behavior-leader-key";
-            #binding-cells = <0>;
-        };
-    };
-};
+// CUST Includes
+#define HOST_OS 1  // Define Linux as OS: required for the unicode macros.
+#include "zmk-helpers/helper.h"
+#include "unicode.h"
 
 /********************/
 /*      Layers      */
@@ -53,11 +44,19 @@ ZMK_BEHAVIOR(hrm, hold_tap,
     global-quick-tap;
     bindings = <&kp>, <&kp>;
 )
+// Leader key
+/ {
+    behaviors {
+        leader: leader {
+            compatible = "zmk,behavior-leader-key";
+            #binding-cells = <0>;
+            euro { sequence = <N4>; bindings = <&euro_sign_l>; };
+            //test_2 { sequence = <A>; bindings = <&kp LS(A)>; };
+        };
+    };
+};
 
 // Combo
-
-// Leader
-ZMK_LEADER_SEQUENCE(ldr_q, &kp N2, Q)
 
 /********************/
 /*  custom Keymaps  */
