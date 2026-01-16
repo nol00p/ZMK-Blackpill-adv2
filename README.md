@@ -41,8 +41,8 @@ SYSTEM  4
 | Action             | Key       | Layer   | Shortcut           |     |     |
 | ------------------ | --------- | ------- | ------------------ | --- | --- |
 | Grave              | Grave     | Default |                    |     |     |
-| Desk Left          |           | Default | &kp LG(PG_UP)      |     |     |
-| Desk Right         |           | Default | &kp LG(PG_DN)      |     |     |
+| Desk Left          | LCtrl     | Default | &kp LG(PG_UP)      |     |     |
+| Desk Right         | RCtrl     | Default | &kp LG(PG_DN)      |     |     |
 | Folder Home        | F8        | Default | &kp LG(SPACE)      |     |     |
 | Desk 1             | F1        | Default | &kp LA(LG(N1))     |     |     |
 | Desk 2             | F2        | Default | &kp LA(LG(N2))     |     |     |
@@ -52,20 +52,20 @@ SYSTEM  4
 | Sys Layer          | prgm      | Default |                    |     |     |
 | Lower Layer        | esc       | Default |                    |     |     |
 | Raise Layer        | enter     | Default |                    |     |     |
-| delete             |           | Lower   | &kp DEL            |     |     |
-| select all         |           | Lower   | &kp LC(A)          |     |     |
-| shift + tab        |           | Lower   | &kp LS(TAB)        |     |     |
-| super              |           | Lower   | &kp LGUI           |     |     |
-| tab                |           | Lower   | &kp TAB            |     |     |
-| undo               |           | Lower   | &kp LC(Z)          |     |     |
-| cut                |           | Lower   | &kp LC(X)          |     |     |
-| copy               |           | Lower   | &kp LC(C)          |     |     |
-| paste              |           | Lower   | &kp LC(V)          |     |     |
-| --                 |           | Lower   | &kp LC(B)          |     |     |
-| Ghostly            |           | Lower   | &kp LS(LC(LG(N1))) |     |     |
-| Brave              |           | Lower   | &kp LS(LC(LG(N2))) |     |     |
-| Obsidian           |           | Lower   | &kp LS(LC(LG(N3))) |     |     |
-| 1Password          |           | Lower   | &kp LS(LC(LG(N4))) |     |     |
+| delete             | T         | Lower   | &kp DEL            |     |     |
+| select all         | A         | Lower   | &kp LC(A)          |     |     |
+| shift + tab        | S         | Lower   | &kp LS(TAB)        |     |     |
+| super              | D         | Lower   | &kp LGUI           |     |     |
+| tab                | F         | Lower   | &kp TAB            |     |     |
+| undo               | Z         | Lower   | &kp LC(Z)          |     |     |
+| cut                | X         | Lower   | &kp LC(X)          |     |     |
+| copy               | C         | Lower   | &kp LC(C)          |     |     |
+| paste              | V         | Lower   | &kp LC(V)          |     |     |
+| --                 | B         | Lower   | &kp LC(B)          |     |     |
+| Ghostly            | F9        | Lower   | &kp LS(LC(LG(N1))) |     |     |
+| Brave              | F10       | Lower   | &kp LS(LC(LG(N2))) |     |     |
+| Obsidian           | F11       | Lower   | &kp LS(LC(LG(N3))) |     |     |
+| 1Password          | F12       | Lower   | &kp LS(LC(LG(N4))) |     |     |
 | LEFT               | h         | Lower   | &kp LEFT           |     |     |
 | DOWN               | j         | Lower   | &kp DOWN           |     |     |
 | UP                 | k         | Lower   | &kp UP             |     |     |
@@ -76,17 +76,17 @@ SYSTEM  4
 | Move win to ws 4   | F3        | Raise   | &kp LG(LS(N4))     |     |     |
 | Gui +              | +         | Raise   | &kp LC(EQUAL)      |     |     |
 | Gui -              | -         | Raise   | &kp LC(MINUS)      |     |     |
-| Hide Win           |           | Raise   | &kp LG(H)          |     |     |
-| set win Left       |           | Raise   | &kp LG(LEFT)       |     |     |
-| Win reduce         |           | Raise   | &kp LG(DOWN)       |     |     |
-| Win Full Screen    |           | Raise   | &kp LG(UP)         |     |     |
-| Set Win Right      |           | Raise   | &kp LG(RIGHT)      |     |     |
-| (                  |           | Raise   | &kp LPAR           |     |     |
-| )                  |           | Raise   | &kp RPAR           |     |     |
-| [                  |           | Raise   | kp LBKT            |     |     |
-| ]                  |           | Raise   | &kp RBKT           |     |     |
-| {                  |           | Raise   | &kp LBRC           |     |     |
-| }                  |           | Raise   | &kp RBRC           |     |     |
+| Hide Win           | U         | Raise   | &kp LG(H)          |     |     |
+| set win Left       | H         | Raise   | &kp LG(LEFT)       |     |     |
+| Win reduce         | J         | Raise   | &kp LG(DOWN)       |     |     |
+| Win Full Screen    | K         | Raise   | &kp LG(UP)         |     |     |
+| Set Win Right      | L         | Raise   | &kp LG(RIGHT)      |     |     |
+| (                  | E         | Raise   | &kp LPAR           |     |     |
+| )                  | R         | Raise   | &kp RPAR           |     |     |
+| [                  | S         | Raise   | kp LBKT            |     |     |
+| ]                  | D         | Raise   | &kp RBKT           |     |     |
+| {                  | C         | Raise   | &kp LBRC           |     |     |
+| }                  | V         | Raise   | &kp RBRC           |     |     |
 | Default adv2 F row |           | FN      |                    |     |     |
 | unlock zmk studio  | esc       | SYS     | &studio_unlock     |     |     |
 | bt 1               | f1        | SYS     | &bt BT_SEL 0       |     |     |
@@ -96,6 +96,7 @@ SYSTEM  4
 | bt clear           | f8        | SYS     | &bt BT_CLR         |     |     |
 | boot loader mode   | shift     | SYS     | &bootloader        |     |     |
 | keyboard reset     | thumb esc | SYS     | &reset             |     |     |
+
 
 ## Credits
 https://github.com/dcpedit/pillzmod
