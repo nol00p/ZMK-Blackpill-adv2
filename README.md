@@ -23,6 +23,10 @@ The only remaining stock components are the Cherry MX Brown switches. While ther
 ###### Supported but not yet tested
 - [ ] Combo
 
+## Battery level Tweaks
+the battery reporting is included so it can be visible in the os. 
+bluetooth power, speed and timeour update too for better experience. 
+
 ## Layout
 
 ### layers
