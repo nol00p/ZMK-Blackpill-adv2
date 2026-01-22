@@ -72,6 +72,7 @@ RC(0, 6) RC(1, 6) RC(2, 6)
 	kscan0: kscan_0 {
 		compatible = "zmk,kscan-gpio-matrix";
 		diode-direction = "col2row";
+		wakeup-source;  // <- This line is to enable wakeup from sleep
 		
 		col-gpios
 			= <&shifter 0 GPIO_ACTIVE_HIGH>
