@@ -49,7 +49,7 @@ connected to a GPIO pin.
   Power mod:
 
   | What │      Pin      │               Description               │
-  | ---- | ------------- | --------------------------------------- | 
+  | ---- | ------------- | --------------------------------------- |
   │ Column 5 │ Pin 5 (Q5/QF) │ Connect one end of 10kΩ resistor here   │
   │ 3.3V     │ Pin 16 (VCC)  │ Connect other end of 10kΩ resistor here │
 	  
