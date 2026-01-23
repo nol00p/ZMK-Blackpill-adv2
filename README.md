@@ -27,6 +27,34 @@ The only remaining stock components are the Cherry MX Brown switches. While ther
 the battery reporting is included so it can be visible in the os. 
 bluetooth power, speed and timeour update too for better experience. 
 
+**Deep Sleep is not support by the pcb as it is.**
+in order to support it, the pcb needs to be modified so that col5 can be directly
+connected to a GPIO pin. 
+
+### 74HC595 Pinout
+
+74HC595 pin diagram:
+
+          ┌───────┐
+     Q1 ──┤ 1  16 ├── VCC (3.3V) ←── Use this for 3.3V
+     Q2 ──┤ 2  15 ├── Q0
+     Q3 ──┤ 3  14 ├── SER (data in)
+     Q4 ──┤ 4  13 ├── OE
+     Q5 ──┤ 5  12 ├── RCLK (latch)    ←── Column 5 output
+     Q6 ──┤ 6  11 ├── SRCLK (clock)
+     Q7 ──┤ 7  10 ├── SRCLR (reset)
+    GND ──┤ 8   9 ├── Q7' (serial out)
+          └───────┘
+
+  Power mod:
+  ┌──────────┬───────────────┬─────────────────────────────────────────┐
+  │   What   │      Pin      │               Description               │
+  ├──────────┼───────────────┼─────────────────────────────────────────┤
+  │ Column 5 │ Pin 5 (Q5/QF) │ Connect one end of 10kΩ resistor here   │
+  ├──────────┼───────────────┼─────────────────────────────────────────┤
+  │ 3.3V     │ Pin 16 (VCC)  │ Connect other end of 10kΩ resistor here │
+  └──────────┴───────────────┴─────────────────────────────────────────┘
+
 ## Layout
 
 ### layers
